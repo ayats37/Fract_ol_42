@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:57:59 by taya              #+#    #+#             */
-/*   Updated: 2025/03/05 12:08:21 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/05 16:16:20 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 			fractal->julia.real = ft_atof(argv[2]);
 			fractal->julia.imag = ft_atof(argv[3]);
 		}
-		else
+		else if (argc == 2)
 		{
 			fractal->julia.real = -0.8;
 			fractal->julia.imag = 0.156;
 		}
+		else
+			exit(1);
 		data->fractal_type = 1;
 	}
 	else if (ft_strcmp(argv[1], "mandelbrot") == 0)
@@ -48,13 +50,15 @@ int	main(int argc, char **argv)
 	fractal.ofsset.real = 0;
 	fractal.ofsset.imag = 0;
 	data.fractal = &fractal;
+	fractal_type(&data, &fractal, argc, argv);
 	if (!create_window_img(&data))
 		return (1);
-	fractal_type(&data, &fractal, argc, argv);
-	if (data.fractal_type == 0)
+	if (data.fractal_type == 0 && argc == 2)
 		mandelbrot(&data);
-	else
+	else if (data.fractal_type == 1)
 		julia(&data, &fractal);
+	else
+		exit(1);
 	mlx_key_hook(data.win, key_hook, &data);
 	mlx_mouse_hook(data.win, mouse_hook, &data);
 	mlx_hook(data.win, 17, 0, close_window, &data);

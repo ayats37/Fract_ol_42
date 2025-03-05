@@ -6,17 +6,16 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:58:17 by taya              #+#    #+#             */
-/*   Updated: 2025/02/27 09:54:23 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/05 15:57:37 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <math.h>
 # include <mlx.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_complex
 {

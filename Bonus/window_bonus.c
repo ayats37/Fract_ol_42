@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:32:21 by taya              #+#    #+#             */
-/*   Updated: 2025/02/27 12:52:38 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/05 15:54:45 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	create_window_img(t_data *data)
 	if (!data->img)
 	{
 		mlx_destroy_window(data->mlx, data->win);
-		free(data->mlx);
 		return (0);
 	}
 	data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length,
