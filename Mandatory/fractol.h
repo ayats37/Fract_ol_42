@@ -14,8 +14,8 @@
 # define FRACTOL_H
 
 # include <mlx.h>
-# include <stdlib.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_complex
 {
@@ -71,6 +71,6 @@ void			draw_m_fractal(t_data *data, int px, int py, t_complex z);
 void			fractal_type(t_data *data, t_fractal *fractal, int argc,
 					char **argv);
 int				ft_atoi(const char *str);
-int 			is_valid_nbr(char *str);
+int				is_valid_nbr(char *str);
 
 #endif

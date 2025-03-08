@@ -27,7 +27,7 @@ void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 			if (!is_valid_nbr(argv[2]) && !is_valid_nbr(argv[3]))
 			{
 				perror("Error: set valid numbers");
-                exit(1);
+				exit(1);
 			}
 			fractal->julia.real = ft_atof(argv[2]);
 			fractal->julia.imag = ft_atof(argv[3]);

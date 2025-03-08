@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:31:44 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 13:18:27 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 13:33:02 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,28 +89,29 @@ void	calculate_iterations(int *iteration, int max_iterations, t_complex *z,
 		(*iteration)++;
 	}
 }
-int is_valid_nbr(char *str)
+
+int	is_valid_nbr(char *str)
 {
-    int i;
-    int has_digit;
-    
+	int	i;
+	int	has_digit;
+
 	i = 0;
 	has_digit = 0;
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i] >= '0' && str[i] <= '9')
-    {
-        has_digit = 1;
-        i++;
-    }
-    if (str[i] == '.')
-    {
-        i++;
-        while (str[i] >= '0' && str[i] <= '9')
-        {
-            has_digit = 1;
-            i++;
-        }
-    }
-    return (str[i] == '\0' && has_digit);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		has_digit = 1;
+		i++;
+	}
+	if (str[i] == '.')
+	{
+		i++;
+		while (str[i] >= '0' && str[i] <= '9')
+		{
+			has_digit = 1;
+			i++;
+		}
+	}
+	return (str[i] == '\0' && has_digit);
 }

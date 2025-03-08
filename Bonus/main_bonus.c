@@ -17,7 +17,7 @@ void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 	if (argc < 2 || (ft_strcmp(argv[1], "mandelbrot") != 0 && ft_strcmp(argv[1],
 				"julia") != 0 && ft_strcmp(argv[1], "tricorn") != 0))
 	{
-		perror ("Usage: ./fractol [mandelbrot | julia | tricorn]\n");
+		perror("Usage: ./fractol [mandelbrot | julia | tricorn]\n");
 		exit(1);
 	}
 	if (ft_strcmp(argv[1], "julia") == 0)

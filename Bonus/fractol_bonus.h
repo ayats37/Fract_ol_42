@@ -14,8 +14,8 @@
 # define FRACTOL_BONUS_H
 
 # include <mlx.h>
+# include <stdio.h>
 # include <stdlib.h>
-#include <stdio.h>
 
 typedef struct s_complex
 {
@@ -76,5 +76,5 @@ void			calculate_iterations(int *iteration, int max_iterations,
 					t_complex *z, t_complex c);
 int				ft_atoi(const char *str);
 void			apply_zoom(t_data *data, int button, int x, int y);
-int is_valid_nbr(char *str);
+int				is_valid_nbr(char *str);
 #endif
