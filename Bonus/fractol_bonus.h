@@ -77,7 +77,8 @@ void			calculate_iterations(int *iteration, int max_iterations,
 int				ft_atoi(const char *str);
 void			apply_zoom(t_data *data, int button, int x, int y);
 int				is_valid_nbr(char *str);
-void	validate_input(int argc, char **argv);
-void	fractal_parameters(t_data *data, t_fractal *fractal, int argc, char **argv);
+void			validate_input(int argc, char **argv);
+void			fractal_parameters(t_data *data, t_fractal *fractal, int argc,
+					char **argv);
 
 #endif

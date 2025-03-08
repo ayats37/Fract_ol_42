@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 02:20:02 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 15:21:12 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 15:24:36 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	validate_input(int argc, char **argv)
 		exit(1);
 	}
 }
-void	fractal_parameters(t_data *data, t_fractal *fractal, int argc, char **argv)
+
+void	fractal_parameters(t_data *data, t_fractal *fractal, int argc,
+		char **argv)
 {
 	if (ft_strcmp(argv[1], "julia") == 0)
 	{
@@ -47,6 +49,7 @@ void	fractal_parameters(t_data *data, t_fractal *fractal, int argc, char **argv)
 	else if (ft_strcmp(argv[1], "mandelbrot") == 0)
 		data->fractal_type = 0;
 }
+
 void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 {
 	validate_input(argc, argv);
