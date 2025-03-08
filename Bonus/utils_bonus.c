@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:31:44 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 13:33:02 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 14:54:13 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,26 +92,15 @@ void	calculate_iterations(int *iteration, int max_iterations, t_complex *z,
 
 int	is_valid_nbr(char *str)
 {
-	int	i;
-	int	has_digit;
-
-	i = 0;
-	has_digit = 0;
+	int i ;
+	i = 0 ;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i])
 	{
-		has_digit = 1;
+		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '.'))
+			return 0;
 		i++;
 	}
-	if (str[i] == '.')
-	{
-		i++;
-		while (str[i] >= '0' && str[i] <= '9')
-		{
-			has_digit = 1;
-			i++;
-		}
-	}
-	return (str[i] == '\0' && has_digit);
+	return 1;
 }
