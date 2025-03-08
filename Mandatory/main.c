@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:57:59 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 15:09:09 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 15:21:25 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,10 @@ void	fractal_parameters(t_data *data, t_fractal *fractal, int argc,
 {
 	if (ft_strcmp(argv[1], "julia") == 0)
 	{
-		if (argc == 4)
+		if (argc == 4 && is_valid_nbr(argv[2]) && is_valid_nbr(argv[3]))
 		{
-			if (is_valid_nbr(argv[2]) && is_valid_nbr(argv[3]))
-			{
-				fractal->julia.real = ft_atof(argv[2]);
-				fractal->julia.imag = ft_atof(argv[3]);
-			}
-			else
-			{
-				perror("is no valid num");
-				exit(1);
-			}
+			fractal->julia.real = ft_atof(argv[2]);
+			fractal->julia.imag = ft_atof(argv[3]);
 		}
 		else if (argc == 2)
 		{
@@ -46,7 +38,10 @@ void	fractal_parameters(t_data *data, t_fractal *fractal, int argc,
 			fractal->julia.imag = 0.156;
 		}
 		else
+		{
+			perror("Error: no valid nbr");
 			exit(1);
+		}
 		data->fractal_type = 1;
 	}
 	else if (ft_strcmp(argv[1], "mandelbrot") == 0)

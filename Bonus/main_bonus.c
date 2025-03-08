@@ -6,13 +6,13 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 02:20:02 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 14:54:34 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 15:21:12 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol_bonus.h"
 
-void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
+void	validate_input(int argc, char **argv)
 {
 	if (argc < 2 || (ft_strcmp(argv[1], "mandelbrot") != 0 && ft_strcmp(argv[1],
 				"julia") != 0 && ft_strcmp(argv[1], "tricorn") != 0))
@@ -20,20 +20,15 @@ void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 		perror("Usage: ./fractol [mandelbrot | julia | tricorn]\n");
 		exit(1);
 	}
+}
+void	fractal_parameters(t_data *data, t_fractal *fractal, int argc, char **argv)
+{
 	if (ft_strcmp(argv[1], "julia") == 0)
 	{
-		if (argc == 4)
+		if (argc == 4 && is_valid_nbr(argv[2]) && is_valid_nbr(argv[3]))
 		{
-			if (is_valid_nbr(argv[2]) && is_valid_nbr(argv[3]))
-			{
-				fractal->julia.real = ft_atof(argv[2]);
-				fractal->julia.imag = ft_atof(argv[3]);
-			}
-			else
-			{
-				perror("is no valid num");
-				exit(1);
-			}
+			fractal->julia.real = ft_atof(argv[2]);
+			fractal->julia.imag = ft_atof(argv[3]);
 		}
 		else if (argc == 2)
 		{
@@ -41,13 +36,21 @@ void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 			fractal->julia.imag = 0.156;
 		}
 		else
+		{
+			perror("Error: no valid nbr");
 			exit(1);
+		}
 		data->fractal_type = 1;
 	}
 	else if (ft_strcmp(argv[1], "tricorn") == 0)
 		data->fractal_type = 2;
 	else if (ft_strcmp(argv[1], "mandelbrot") == 0)
 		data->fractal_type = 0;
+}
+void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
+{
+	validate_input(argc, argv);
+	fractal_parameters(data, fractal, argc, argv);
 }
 
 int	main(int argc, char **argv)

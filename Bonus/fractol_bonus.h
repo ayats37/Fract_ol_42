@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 00:57:27 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 13:19:38 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 15:20:06 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,7 @@ void			calculate_iterations(int *iteration, int max_iterations,
 int				ft_atoi(const char *str);
 void			apply_zoom(t_data *data, int button, int x, int y);
 int				is_valid_nbr(char *str);
+void	validate_input(int argc, char **argv);
+void	fractal_parameters(t_data *data, t_fractal *fractal, int argc, char **argv);
+
 #endif
