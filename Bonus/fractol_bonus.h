@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 00:57:27 by taya              #+#    #+#             */
-/*   Updated: 2025/03/05 15:57:29 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 13:19:38 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,5 @@ void			calculate_iterations(int *iteration, int max_iterations,
 					t_complex *z, t_complex c);
 int				ft_atoi(const char *str);
 void			apply_zoom(t_data *data, int button, int x, int y);
-
+int is_valid_nbr(char *str);
 #endif

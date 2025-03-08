@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:58:17 by taya              #+#    #+#             */
-/*   Updated: 2025/03/05 16:36:52 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 13:14:56 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void			draw_m_fractal(t_data *data, int px, int py, t_complex z);
 void			fractal_type(t_data *data, t_fractal *fractal, int argc,
 					char **argv);
 int				ft_atoi(const char *str);
+int 			is_valid_nbr(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 02:20:02 by taya              #+#    #+#             */
-/*   Updated: 2025/03/05 16:11:22 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 13:20:44 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ void	fractal_type(t_data *data, t_fractal *fractal, int argc, char **argv)
 	{
 		if (argc == 4)
 		{
+			if (!is_valid_nbr(argv[2]) && !is_valid_nbr(argv[3]))
+			{
+				perror("Error: set valid numbers");
+				exit(1);
+			}
 			fractal->julia.real = ft_atof(argv[2]);
 			fractal->julia.imag = ft_atof(argv[3]);
 		}
