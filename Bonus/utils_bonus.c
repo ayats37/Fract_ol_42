@@ -92,15 +92,16 @@ void	calculate_iterations(int *iteration, int max_iterations, t_complex *z,
 
 int	is_valid_nbr(char *str)
 {
-	int i ;
-	i = 0 ;
+	int	i;
+
+	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
 	{
 		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '.'))
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
